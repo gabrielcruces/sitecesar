@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecânica de Motos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .banner {
+            background: url('https://via.placeholder.com/1500x400') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .search-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1.1em;
+            min-width: 400px;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #333;
+            color: white;
+        }
+
+        table td img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .banner {
+                font-size: 1.5em;
+                height: 300px;
+            }
+
+            table, th, td {
+                font-size: 0.9em;
+            }
+
+            table td img {
+                max-width: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .banner {
+                font-size: 1.2em;
+                height: 200px;
+            }
+
+            button {
+                padding: 8px 16px;
+            }
+
+            table, th, td {
+                font-size: 0.8em;
+            }
+
+            table td img {
+                max-width: 60px;
+            }
+
+            footer {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mecânica de Motos</h1>
+    <p>Peças e Acessórios para sua moto</p>
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#produtos">Produtos</a>
+</nav>
+
+<div class="banner" id="inicio">
+    <h2>Tudo o que sua moto precisa</h2>
+</div>
+
+<div class="content" id="produtos">
+    <h2>Produtos</h2>
+
+    <!-- Seção de Pesquisa -->
+    <div class="search-section">
+        <button onclick="scrollToSection('pneus')">Pesquisar Pneus</button>
+        <button onclick="scrollToSection('pastilhas')">Pesquisar Pastilhas de Freio</button>
+        <button onclick="scrollToSection('lonas')">Pesquisar Lonas de Freio</button>
+        <button onclick="scrollToSection('bengalas')">Pesquisar Bengalas</button>
+        <button onclick="scrollToSection('adesivos')">Pesquisar Adesivos</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Imagem</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="pneus">
+                <td>Pneus</td>
+                <td><img src="https://via.placeholder.com/100x100" alt="Pneus"></td>
+                <td>Pneus de alta qualidade para todos os modelos de motos.</td>
+                <td>R$ 300,00</td>
+            </tr>
+            <tr id="pastilhas">
+                <td>Pastilhas de Freio</td>
+                <td><img src="https://via.placeholder.com/100x100" alt="Pastilhas de Freio"></td>
+                <td>Pastilhas de freio duráveis para uma frenagem segura.</td>
+                <td>R$ 100,00</td>
+            </tr>
+            <tr id="lonas">
+                <td>Lonas de Freio</td>
+                <td><img src="https://via.placeholder.com/100x100" alt="Lonas de Freio"></td>
+                <td>Lonas de freio para diversos modelos de motos.</td>
+                <td>R$ 80,00</td>
+            </tr>
+            <tr id="bengalas">
+                <td>Bengalas</td>
+                <td><img src="https://via.placeholder.com/100x100" alt="Bengalas"></td>
+                <td>Bengalas resistentes para a suspensão da sua moto.</td>
+                <td>R$ 250,00</td>
+            </tr>
+            <tr id="adesivos">
+                <td>Adesivos</td>
+                <td><img src="https://via.placeholder.com/100x100" alt="Adesivos"></td>
+                <td>Adesivos personalizados para dar um toque especial na sua moto.</td>
+                <td>R$ 30,00</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <p>Mecânica de Motos © 2024 - Todos os direitos reservados.</p>
+</footer>
+
+<!-- Script para rolar até a seção -->
+<script>
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
